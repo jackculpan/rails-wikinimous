@@ -1,0 +1,12 @@
+<div class="container d-flex justify-content-center">
+  <ul>
+  <% @articles.each do |article| %>
+    <li class=""><%= link_to "#{article.title}", article_path(article.id) %></li>
+    <li> <%= article.content %></li>
+    <li class="btn btn-primary"><%= link_to "Edit article", edit_article_path(article.id) %></li>
+    <li class="btn btn-primary"><%= link_to "Delete article", article_path(article.id), method: :delete, data: { confirm: "Are you sure you want to delete?" } %></li>
+    <br>
+  <% end %>
+  </ul>
+  <br>
+</div>
